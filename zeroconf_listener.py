@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 
 import ipaddress
+import os
+from tempfile import NamedTemporaryFile
 
 from six.moves import input
 from zeroconf import ServiceBrowser, Zeroconf
 
-NODES_FILE_PATH = './nodes.txt'
+NODES_FILE_PATH = 'nodes.txt'
 
 def append_ip_to_nodes_file(ip):
-    with open(NODES_FILE_PATH, 'r+') as f:
-        ips = f.read().splitlines()
-        if ip not in ips:
-            f.write('{}\n'.format(ip))
+    with open(NODES_FILE_PATH) as f:
+        ips = set(f.read().splitlines())
+        ips.add(ip)
+
+    with NamedTemporaryFile(mode='w', delete=False) as tmpfile:
+        tmpfile.write('\n'.join(sorted(ips)))
+        # ensure content is on disk
+        tmpfile.flush()
+        os.fsync(tmpfile.fileno())
+
+    os.rename(tmpfile.name, NODES_FILE_PATH)
+
 
 class MyListener(object):
 
