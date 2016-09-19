@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """ Example of announcing a service (in this case, a fake HTTP server).
     From https://github.com/jstasiak/python-zeroconf/blob/master/examples/registration.py
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     desc = {'path': '/~paulsm/'}
 
     info = ServiceInfo("_sciab._tcp.local.",
-                       "Paul's Test Web Site._http._tcp.local.",
+                       "Test._sciab._tcp.local.",
                        socket.inet_aton("127.0.0.1"), 80, 0, 0,
                        desc, "ash-2.local.")
 
