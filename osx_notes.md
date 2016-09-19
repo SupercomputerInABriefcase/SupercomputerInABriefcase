@@ -5,12 +5,10 @@ Install libdnet using brew:
 
 ```$ brew install libdnet```
 
-Install the appropriate requirements.txt for your version of Python.
+Install Open MPI
 
-Python 2:
+```$ brew install open-mpi```
 
-```$ pip install -r requirements.txt```
-
-Python 3:
+Install the Python 3.x requirements
 
 ```$ pip install -r requirements_py3.txt```

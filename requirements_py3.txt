@@ -1,4 +1,5 @@
 enum-compat==0.0.2
+mpi4py==2.0.0
 netdisco==0.7.1
 netifaces==0.10.5
 requests==2.11.1

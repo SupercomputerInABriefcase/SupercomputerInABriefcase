@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""
+Hello World MPI program
+
+e.g.
+$ mpirun -np 4 ./helloworld.py
+"""
 from mpi4py import MPI
 
 
