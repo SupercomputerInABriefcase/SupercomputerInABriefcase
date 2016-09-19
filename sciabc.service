@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+
+<!--
+    This file is part of SupercomputerInABriefcase
+    Store this file in /etc/avahi/services/sciabc.service
+-->
+
+<service-group>
+  <name replace-wildcards="yes">SupercomputerInABriefcase on %h</name>
+
+  <service>
+    <type>_sciabc._tcp</type>
+    <port>34343</port>
+  </service>
+</service-group>
