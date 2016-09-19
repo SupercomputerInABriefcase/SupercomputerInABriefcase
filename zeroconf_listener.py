@@ -9,6 +9,11 @@ from zeroconf import ServiceBrowser, Zeroconf
 
 NODES_FILE_PATH = 'nodes.txt'
 
+
+def reset_nodes_file():
+    with open(NODES_FILE_PATH, 'w') as f:
+        pass
+
 def append_ip_to_nodes_file(ip):
     with open(NODES_FILE_PATH) as f:
         ips = set(f.read().splitlines())
@@ -52,12 +57,16 @@ class MyListener(object):
         append_ip_to_nodes_file(str(ip))
 
 
-zeroconf = Zeroconf()
-listener = MyListener()
-browser = ServiceBrowser(zeroconf, "_sciabc._tcp.local.", listener)
-try:
-    input("Press Ctrl-C to exit...\n\n")
-except KeyboardInterrupt:
-    print('Exiting.')
-finally:
-    zeroconf.close()
+if __name__ == '__main__':
+    zeroconf = Zeroconf()
+    listener = MyListener()
+    browser = ServiceBrowser(zeroconf, "_sciabc._tcp.local.", listener)
+
+    reset_nodes_file()
+
+    try:
+        input("Press Ctrl-C to exit...\n\n")
+    except KeyboardInterrupt:
+        print('Exiting.')
+    finally:
+        zeroconf.close()
