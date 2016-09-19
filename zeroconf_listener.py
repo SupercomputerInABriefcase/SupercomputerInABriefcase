@@ -46,6 +46,8 @@ zeroconf = Zeroconf()
 listener = MyListener()
 browser = ServiceBrowser(zeroconf, "_sciabc._tcp.local.", listener)
 try:
-    input("Press enter to exit...\n\n")
+    input("Press Ctrl-C to exit...\n\n")
+except KeyboardInterrupt:
+    print('Exiting.')
 finally:
     zeroconf.close()
