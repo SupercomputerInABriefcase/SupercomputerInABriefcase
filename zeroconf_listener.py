@@ -19,7 +19,7 @@ class MyListener(object):
         print("Service %s removed" % (name,))
 
     def add_service(self, zeroconf, type, name):
-        """This get's called for services discovered.
+        """This gets called for services discovered.
 
         Example:
 
