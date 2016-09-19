@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 
+import ipaddress
+
 from six.moves import input
 from zeroconf import ServiceBrowser, Zeroconf
 
+NODES_FILE_PATH = './nodes.txt'
+
+def append_ip_to_nodes_file(ip):
+    with open(NODES_FILE_PATH, 'r+') as f:
+        ips = f.read().splitlines()
+        if ip not in ips:
+            f.write('{}\n'.format(ip))
 
 class MyListener(object):
 
@@ -29,6 +38,8 @@ class MyListener(object):
         """
         info = zeroconf.get_service_info(type, name)
         print("Service %s added, service info: %s" % (name, info))
+        ip = ipaddress.ip_address(info.address)
+        append_ip_to_nodes_file(str(ip))
 
 
 zeroconf = Zeroconf()
