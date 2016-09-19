@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from six.moves import input
 from zeroconf import ServiceBrowser, Zeroconf
 
