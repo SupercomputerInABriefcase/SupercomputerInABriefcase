@@ -1,2 +1,7 @@
+enum-compat==0.0.2
+netdisco==0.7.1
 netifaces==0.10.5
+requests==2.11.1
 scapy-python3==0.18
+six==1.10.0
+zeroconf==0.17.6
