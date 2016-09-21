@@ -6,6 +6,10 @@ Clearly it is impossible to fit a supercomputer in a briefcase. But it is a grea
 being able to construct ad hoc dynamic clusters of computers with a view to using them to play with
 parallelism.
 
+[Russel Winder](https://www.russel.org.uk/) gave a presentation at [PyCon UK 2016](http://2016.pyconuk.org/)
+introducing the idea of the "Supercomputer in a Briefcase". The video of the presentation is on
+YouTube [here](https://www.youtube.com/watch?v=EUA4GIiYg5w)
+
 ## Purpose
 
 This repository is for software to control and manage an ad hoc, dynamic cluster of computers.
@@ -36,3 +40,9 @@ This repository is for software to control and manage an ad hoc, dynamic cluster
 ## Licence
 
 All the software here is licenced under GPLv3.
+
+Some of the bits of code we have imported here from elsewhere have MIT or LGPL licences on the originals or
+they are in the public domain. In the rush at the sprint at PyCon UK 2016, we were not quite as vigilant
+about licences as perhaps we should have been. We will properly retrofit the correct licence statements to
+the imported code as needed corrections are found. If you spot an infelicity of ours that needs correction,
+please let us know via the issues and the corrections will be made.
