@@ -32,6 +32,19 @@ This repository is for software to control and manage an ad hoc, dynamic cluster
 - install on manager: `sudo apt-get install python3-mpi4py`
 - mpirun -v --hostfile nodes.txt <cmd>
 
+### Requirements and installation
+
+- enum-compat==0.0.2
+- mpi4py==2.0.0
+- netdisco==0.7.1
+- netifaces==0.10.5
+- requests==2.11.1
+- scapy-python3==0.18
+- six==1.10.0
+- zeroconf==0.17.6
+
+All above packages can be and should be installed using Python Pip
+
 ## Issues
 
 - how to specify the ssh user of each node?
